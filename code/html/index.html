@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="aligncenter">
+      <h2>AWS CloudFormation Custom Launch Stack Icon</h2>
+    </div>
+    <div class="aligncenter">
+      <br>
+      <br>
+      <p>Please enter the launch stack name:</p>
+      <input type="text" id="launchStackName" name="launchStackName" value="My Launch Stack">
+      <input type="button" class="sendButton" value="Submit"><br>
+      <input type="checkbox" class="saveCheckbox" name="saveCloud">
+      <label for="saveCloud"> Save to S3</label><br><br>
+      <p class="responseText" hidden>Response Text</p>
+      <img id="responseImage">
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="demo-ui-config.js"></script>
+    <script>
+
+      $(".sendButton").on("click", function(){
+
+        var textInput = $("#launchStackName").val();
+        if(textInput.length > 0)
+        {
+          uploadToLambda(textInput);
+        }
+        else {
+          alert("Please enter a name first.");
+        }
+      });
+
+      function uploadToLambda(aTextInput){
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", appVariables.apiEndpoint, true);
+        xhr.setRequestHeader("Content-Type", "text/plain");
+
+        xhr.upload.onprogress = function(e) {
+          if (e.lengthComputable) {
+            var percentComplete = (e.loaded / e.total) * 100;
+            console.log(percentComplete + "% uploaded");
+          }
+        };
+
+        xhr.onload = function() {
+           if (this.status == 200) {
+
+            var JSONobject = JSON.parse(this.response);
+            var dataString = "data:image/png;base64," + JSONobject.body;
+
+
+            console.log("dataString:", dataString);
+
+            $("#responseImage").attr("src", dataString);
+            $("#responseImage").show();
+            document.body.style.cursor = 'default';
+
+          };
+        };
+
+        document.body.style.cursor = 'progress';
+        var optionURL = JSON.stringify({"textInput":aTextInput, "saveToS3":$(".saveCheckbox").is(":checked")});
+
+        xhr.send(optionURL);
+      }
+
+    </script>
+  </body>
+</html>
