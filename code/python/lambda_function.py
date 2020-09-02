@@ -26,7 +26,7 @@ def initProcess(event):
   bucketName = os.environ['BucketName']
 
   s3client = boto3.resource('s3')
-  s3client.Bucket(bucketName).download_file('Launch-Stack-Icons/generic-launch-stack.png', '/tmp/original.png')
+  s3client.Bucket(bucketName).download_file('launch-stack-icons/generic-launch-stack.png', '/tmp/original.png')
 
   # Read the image
   originalImage = cv.imread('/tmp/original.png', cv.IMREAD_UNCHANGED)
@@ -71,7 +71,7 @@ def saveImageToS3(image, sentText, bucketName, s3client):
 # remove the whitespace (if any) at the ends of the sent text and replace spaces with '-'
   key = sentText.strip().replace(' ','-') + ".png"
 
-  Prefix = 'Launch-Stack-Icons/'
+  Prefix = 'launch-stack-icons/'
 
   s3 = boto3.resource('s3')
 
