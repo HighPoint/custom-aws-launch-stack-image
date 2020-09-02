@@ -20,6 +20,8 @@ Create your own custom AWS launch stack png image.
 
 5. Create your custom launch stack image.
 
+![Custom Launch Stack Button](/readme-images/CustomLaunchStackButtonShot.png?raw=true)
+
 # Questions
 
 Any questions or suggestions, just add an "Issues" submission to this repository. Thanks.
