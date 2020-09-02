@@ -1,0 +1,10 @@
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  background-color: #F5F4EF;
+  margin: 0;
+  cursor: default;
+}
+
+.aligncenter {
+  text-align: center;
+}
