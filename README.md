@@ -14,11 +14,11 @@ Create your own custom AWS launch stack png image.
 
 3. Run the CloudFormation template.
 
-4. This will create a new S3 bucket named, "launch-stack-custom-icon-xxxxxxxx." The "xxxxxxxx" will be the unique CloudFormation ID. Inside the bucket, open the "index.html" file.
+4. This will create a new S3 bucket named, "launch-stack-custom-icon-xxxxxxxx." The "xxxxxxxx" will be the unique CloudFormation ID. Inside the bucket, open the "index.html" file. You will see this:
 
 ![Custom Launch Stack](/readme-images/CustomLaunchStackShot.png?raw=true)
 
-5. Create your custom launch stack image.
+5. Create your custom launch stack image. Just type the name of your launch stack and press "Submit."
 
 ![Custom Launch Stack Button](/readme-images/CustomLaunchStackButtonShot.png?raw=true)
 
