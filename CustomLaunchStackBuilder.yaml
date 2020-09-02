@@ -302,7 +302,7 @@ Resources:
             - Support-ZipFiles/opencv-python3-7-6.zip
             - index.html
             - style.css
-            - Launch-Stack-Icons/generic-launch-stack.png
+            - launch-stack-icons/generic-launch-stack.png
 
 
     PrimerInvoke:
