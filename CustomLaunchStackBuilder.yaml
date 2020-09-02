@@ -124,7 +124,7 @@ Resources:
           - python3.8
         Content:
             S3Bucket: !Ref DemoBucket
-            S3Key: Support-ZipFiles/opencv-python3-7-6.zip
+            S3Key: support-zipfiles/opencv-python3-7-6.zip
         Description: OpenCV Source Layer
         LayerName: opencv-custom-icon-layer
 
@@ -134,7 +134,7 @@ Resources:
       Properties:
         Code:
           S3Bucket: !Ref DemoBucket
-          S3Key: Support-ZipFiles/Lambda_Function_Python.zip
+          S3Key: support-zipfiles/Lambda_Function_Python.zip
         Description: Custom Launch Stack Builder Lambda
         Environment:
           Variables:
@@ -298,8 +298,8 @@ Resources:
         SourceBucket: launch-stack-custom-icon
         Prefix: ''
         Objects:
-            - Support-ZipFiles/Lambda_Function_Python.zip
-            - Support-ZipFiles/opencv-python3-7-6.zip
+            - support-zipfiles/Lambda_Function_Python.zip
+            - support-zipfiles/opencv-python3-7-6.zip
             - index.html
             - style.css
             - launch-stack-icons/generic-launch-stack.png
