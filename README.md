@@ -1,4 +1,4 @@
-# Custom AWS Launch Stack Image
+# Custom AWS Launch Stack Image 
 
 ![Custom Launch Stack](/readme-images/custom-launch-stack.png?raw=true)
 
